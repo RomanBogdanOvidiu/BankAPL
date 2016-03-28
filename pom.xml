@@ -188,7 +188,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>SpringSecurity</finalName>
+		<finalName>Project1</finalName>
 		<plugins>
 
 			<plugin>

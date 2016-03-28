@@ -14,10 +14,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import com.bog.config.SecurityConfig;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({ "" })
+@ComponentScan({ "com.bog.*" })
 @EnableTransactionManagement
 @Import({ SecurityConfig.class })
 public class AppConfig {
@@ -37,6 +38,7 @@ public class AppConfig {
         prop.put("hibernate.format_sql", "true");
         prop.put("hibernate.show_sql", "true");
         prop.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        prop.put("hibernate.hbm2ddl.auto", "update");
         return prop;
     }
 	
@@ -45,7 +47,7 @@ public class AppConfig {
 		
 		BasicDataSource ds = new BasicDataSource();
 	    ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost:3306/bank?autoReconnect=true&useSSL=false");
+		ds.setUrl("jdbc:mysql://localhost:3306/bank");
 		ds.setUsername("root");
 		ds.setPassword("B0gd@n94");
 		return ds;
