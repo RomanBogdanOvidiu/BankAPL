@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/Project1")
 public class MainController {
 
 	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage() {
-
+		System.out.println("WELOCME");
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", "Bank application");
 		model.addObject("message", "This is default page!");

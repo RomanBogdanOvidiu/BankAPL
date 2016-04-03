@@ -37,7 +37,8 @@
 </head>
 <body onload='document.loginForm.username.focus();'>
 
-	<h1>Spring Security Login Form (Database + Hibernate Authentication)</h1>
+	<h1>Spring Security Login Form (Database + Hibernate
+		Authentication)</h1>
 
 	<div id="login-box">
 
@@ -50,9 +51,7 @@
 			<div class="msg">${msg}</div>
 		</c:if>
 
-		<form name='loginForm'
-			action="<c:url value='/login' />" method='POST'>
-
+		<form name='loginForm' action="<c:url value='/login' />" method='POST'>
 			<table>
 				<tr>
 					<td>User:</td>
@@ -66,6 +65,7 @@
 					<td colspan='2'><input name="submit" type="submit"
 						value="submit" /></td>
 				</tr>
+
 			</table>
 
 			<input type="hidden" name="${_csrf.parameterName}"
